@@ -1,145 +1,142 @@
-# Task_07_Ethical-Implications-of-Decision-Making🧠 Task_07_Decision_Making: Ethical Implications of LLM-Driven Recommendations
-📌 Title & One-Line Purpose
+# 🧠 Task_07_Decision_Making: Ethical Implications of LLM-Driven Recommendations
 
-Project: Ethical, Reliable, and Reproducible Decision Report on Team India Performance
-Purpose: Transform an LLM-generated narrative into a stakeholder-ready decision-making document with actionable recommendations, quantified uncertainty, and documented ethical considerations.
+## 📌 Project Title & Purpose
+**Project:** Ethical, Reliable, and Reproducible Decision Report on Team India’s Cricket Performance  
+**Purpose:** Transform a Large Language Model (LLM) narrative into a stakeholder-facing decision-making document — complete with actionable recommendations, uncertainty estimates, and rigorous ethical and legal analysis.
 
-🧭 Executive Summary (≤300 words)
+---
 
-This report provides a structured, auditable, and ethically-grounded set of recommendations for Team India’s coaching and selection strategy based on recent player and match performance data. Our analysis combines descriptive statistics, LLM-generated insights, and quantitative validation to ensure recommendations are evidence-based, fair, and reproducible.
+## 📊 Executive Summary
 
-We identified key trends such as a decline in batting efficiency after the 30th over, bowling economy disparities against specific teams, and underutilization of younger players in high-pressure scenarios. Each claim was validated using statistical testing, bootstrapped confidence intervals, and domain-specific sanity checks.
+This report delivers a structured, auditable, and ethically grounded decision-making framework for **Team India’s coaching and selection strategies** based on recent performance data (2023–2025). By combining **descriptive statistics**, **LLM-generated insights**, and **quantitative validation**, we aim to provide evidence-based, fair, and reproducible recommendations.
 
-🧩 Tiered Recommendations
+### ✅ Key Findings:
+- **Batting performance drops significantly after the 30th over**, suggesting fatigue or tactical inefficiencies.
+- **Bowling economy varies by opponent**, highlighting the need for matchup-specific strategies.
+- **Younger players show rapid improvement but remain underutilized** in key overs.
 
-Operational (Low Risk):
+### 🧩 Tiered Recommendations:
+| Risk Tier | Action | Confidence |
+|----------|--------|------------|
+| **Low (Operational)** | Provide individualized coaching to players with late-innings decline. | High |
+| **Medium (Investigatory)** | Run controlled match simulations to test lineup changes. | Moderate |
+| **High (Strategic)** | Consider leadership or roster changes after extended underperformance. | Low–Moderate |
 
-Provide individualized coaching to players with consistent mid-match performance drops. (Confidence: High)
+All recommendations are probabilistic and should **inform, not replace, human judgment**. Every claim has been validated through statistical testing and fairness audits.
 
-Investigatory (Medium Risk):
+---
 
-Conduct controlled match simulations to test lineup changes and analyze their impact on win probability. (Confidence: Moderate)
+## 🧭 Background & Decision Context
 
-High-Stakes (High Risk):
+**Stakeholders:** Head Coach, Selection Committee, Athletic Director  
+**Decision to Make:** Optimize player development, selection, and match strategy for the upcoming international season.  
+**Risk Level:** Medium–High — outcomes impact team selection, player contracts, public perception, and overall team performance.
 
-Consider leadership or roster adjustments if performance disparities persist beyond two series. Requires legal/HR review. (Confidence: Low–Moderate)
+---
 
-We explicitly document data provenance, bias/fairness assessments, robustness checks, and ethical risks such as selection bias and data privacy concerns.
-All code, prompts, and intermediate outputs are archived to support full auditability and reproducibility.
+## 📁 Data Provenance & Scope
 
-🧠 Background & Decision Context
+- **Source:** BCCI official match data, ESPN CricInfo API, and internal analytics from 2023–2025.  
+- **Collected by:** Team analysts and data engineers.  
+- **Privacy:** All player data anonymized; no biometric or sensitive information included.  
+- **Limitations:** Small sample sizes for some players and missing contextual variables (e.g., weather, injuries) may introduce uncertainty.
 
-Stakeholders: Head Coach, Selection Committee, Athletic Director
-Decision: Strategy for player development, selection, and match preparation for the next international season.
-Risk Level: Medium to High — recommendations may affect player contracts, public perception, and match outcomes.
+---
 
-📊 Data & Methods
+## 🧪 Methods & Process Documentation
 
-Data Provenance:
+### 1. Data Processing
+- Cleaned and standardized match data with Python (`pandas`, `polars`).
+- Aggregated key performance indicators (KPIs) such as strike rate, economy rate, and over-by-over performance.
 
-Source: Official match records, ESPN CricInfo API, BCCI datasets (2023–2025)
+### 2. LLM Narrative Generation
+- Model: `GPT-4o`  
+- Prompt examples stored in [`/prompts/recommend_coach.txt`](prompts/recommend_coach.txt).  
+- All raw LLM outputs archived in [`/outputs/`](outputs/).
 
-Collected by: Team analysts, verified by internal data engineering pipelines
+### 3. Validation & Statistical Analysis
+- **Cross-validation:** 5-fold validation for performance prediction models.
+- **Uncertainty Estimates:** 95% bootstrap confidence intervals and Monte Carlo simulations (n=1000).
+- **Sanity Checks:** Checked for data leakage, missingness (<2%), and outliers.
+- **Bias/Fairness:** Audited subgroup performance differences; no significant disparities detected.
 
-Privacy: All data anonymized at player-ID level; no biometric or sensitive data included.
+---
 
-Methods:
+## 📊 Findings & Analysis
 
-Descriptive stats generated via Python (Pandas & Polars)
+| Metric | Observation | 95% CI | Confidence |
+|--------|-------------|--------|------------|
+| Batting Avg. (Overs 1–30) | 47.3 | ±2.1 | High |
+| Batting Avg. (Overs 31–50) | 38.2 | ±3.4 | Moderate |
+| Bowling Economy vs AUS | 6.4 | ±0.5 | High |
+| Bowling Economy vs ENG | 5.7 | ±0.3 | High |
 
-LLM narrative generated using GPT-4o (see prompts in /prompts/)
+**Insights:**
+- Late-innings batting decline is statistically significant (*p < 0.05*).
+- Opponent-specific economy rate differences indicate potential tactical mismatches.
+- Younger players’ higher growth rates justify expanded roles in high-stakes matches.
 
-Cross-validation: 5-fold validation on performance prediction models
+---
 
-Uncertainty: Bootstrapped 95% confidence intervals and Monte Carlo simulations (n=1000)
+## 🎯 Tiered Recommendations
 
-📈 Findings & Validation
-Key Findings
-Metric	Finding	95% CI	Confidence
-Batting Avg. (Overs 1–30)	47.3	±2.1	High
-Batting Avg. (Overs 31–50)	38.2	±3.4	Moderate
-Bowling Economy vs AUS	6.4	±0.5	High
-Bowling Economy vs ENG	5.7	±0.3	High
+### 🟢 Low-Risk (Operational)
+- Provide individualized coaching to improve batting stamina after the 30th over.
+- Schedule targeted bowling practice focused on high-economy matchups.
 
-Decline in batting consistency after over 30 suggests fatigue or tactical issues.
+### 🟠 Medium-Risk (Investigatory)
+- Conduct A/B testing of new batting orders in simulated match environments.
+- Pilot rotational squad strategies to evaluate bench player readiness.
 
-Bowling performance varies significantly by opponent, requiring matchup-specific strategy.
+### 🔴 High-Risk (Strategic)
+- If disparities persist across two series, initiate a **leadership or roster review** with legal and HR involvement.
+- Reassess captaincy structure if team win probability drops below historical average by >10%.
 
-Younger players show higher improvement rates but are underutilized in key overs.
+---
 
-Sanity & Bias Checks
+## ⚖️ Ethical & Legal Considerations
 
-Missingness <2%; no evidence of data leakage.
+| Concern | Description | Mitigation Strategy |
+|--------|------------|---------------------|
+| **Bias Amplification** | LLM output could reflect historical biases in player selection. | Applied fairness metrics and subgroup audits. |
+| **Privacy Risks** | Player performance data might be misused. | All data anonymized and access-controlled. |
+| **AI Overreliance** | Recommendations might be treated as objective truth. | Labeled LLM content and added statistical validation. |
 
-Fairness audit: no significant subgroup performance disparities beyond expected variance.
+**Uncertainty Statement:** All recommendations are probabilistic and subject to change with new data. Final decisions require **multi-stakeholder human review**.
 
-Sensitivity: Top-5% player removal did not alter conclusions.
+---
 
-🧪 Tiered Recommendations
-🟢 Operational (Low Risk)
+## 🔭 Next Steps & Validation Plan
 
-Targeted coaching for players with late-innings decline.
+- **Short-Term:**  
+  - Run simulations of recommended strategies in controlled environments.  
+  - Begin targeted coaching programs based on identified weaknesses.
 
-Optimize bowling changes based on opponent-specific economy patterns.
+- **Medium-Term:**  
+  - Reevaluate results after three international series.  
+  - Expand data collection (e.g., biometric, contextual) for improved future modeling.
 
-🟠 Investigatory (Medium Risk)
+- **Long-Term:**  
+  - Implement a continuous monitoring pipeline for real-time performance tracking.  
+  - Conduct external audits of fairness and bias annually.
 
-Controlled trials: simulate new batting orders and measure projected run expectancy.
+---
 
-Pilot rotational squad usage to validate player utilization hypotheses.
 
-🔴 High-Stakes (High Risk)
+---
 
-If performance disparities persist, initiate selection review with legal and HR oversight.
+## 🧑‍💻 Reproducibility Statement
 
-Consider leadership structure reassessment based on longitudinal performance metrics.
+This project adheres to reproducible research best practices:
 
-⚖️ Ethical & Legal Considerations
-Concern	Description	Mitigation
-Bias in selection	LLM recommendations could amplify existing selection biases.	Used fairness metrics and subgroup analysis.
-Data privacy	Sensitive player data could risk exposure.	All data anonymized and stored securely.
-Overreliance on AI	LLM output could be misinterpreted as ground truth.	All claims validated statistically and labeled clearly.
+- All scripts and configurations are version-controlled.  
+- Random seeds fixed for deterministic results.  
+- Data lineage and transformation steps documented in `/data/README.md`.  
+- Every claim linked to statistical tests and validation metrics.  
 
-Explicit Uncertainty Statement:
-All recommendations are probabilistic and should inform, not replace, human judgment. Actions, especially high-stakes ones, require multi-stakeholder review.
+---
 
-🔭 Next Steps & Validation Plan
+## 📞 Contact
 
-Conduct A/B testing of proposed coaching interventions across 3 upcoming series.
+- **Author:** Bhavesh Purohit  
 
-Reassess recommendations after integrating new season data (Q2 2025).
-
-Continuous fairness auditing with updated subgroup metrics.
-
-📁 Appendices
-📂 Prompts & LLM Outputs
-
-All LLM prompts used (/prompts/recommend_coach.txt)
-
-Raw GPT-4o output (/outputs/llm_raw.md)
-
-Annotated output (/outputs/annotated.md) showing human edits and rationale
-
-🧑‍💻 Code & Scripts
-
-Data processing scripts (/scripts/data_cleaning.py)
-
-Bootstrap and cross-validation scripts (/scripts/uncertainty_analysis.py)
-
-Bias check scripts (/scripts/fairness_metrics.py)
-
-🪪 Data Lineage
-
-/data/README.md details dataset origin, transformations, and quality checks.
-
-✅ Reproducibility Statement
-
-This project follows reproducible research best practices:
-
-All code and configurations are version-controlled.
-
-Random seeds fixed for all experiments.
-
-Data lineage, prompts, and edited LLM outputs archived.
-
-Each claim linked to statistical validation.
